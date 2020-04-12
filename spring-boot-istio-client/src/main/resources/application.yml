@@ -1,0 +1,7 @@
+server:
+  port: 19090
+spring:
+  application:
+    name: spring-boot-istio-client
+server-host: ${server-host}
+server-port: ${server-port}

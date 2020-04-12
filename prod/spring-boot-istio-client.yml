@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-istio-client
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 19090
+      targetPort: 19090
+  selector:
+    app: spring-boot-istio-client
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-istio-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-istio-client
+  template:
+    metadata:
+      labels:
+        app: spring-boot-istio-client
+    spec:
+      containers:
+        - name: spring-boot-istio-client
+          image: wendev-docker.pkg.coding.net/develop/docker/spring-boot-istio-client:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
+          tty: true
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 19090

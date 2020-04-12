@@ -1,0 +1,7 @@
+server:
+  port: 18080
+spring:
+  application:
+    name: spring-boot-istio-server
+grpc:
+  server-port: 18888
