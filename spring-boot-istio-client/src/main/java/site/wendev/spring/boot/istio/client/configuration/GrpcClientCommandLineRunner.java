@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 加入gRPC Client的启动、停止等逻辑到Spring Boot生命周期中
+ *
  * @author 江文
  * @date 2020/4/12 3:36 下午
  */
@@ -19,7 +21,10 @@ public class GrpcClientCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        // 开启gRPC客户端
         configuration.start();
+
+        // 添加客户端关闭的逻辑
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
                 configuration.shutdown();
