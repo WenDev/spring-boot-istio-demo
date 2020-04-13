@@ -4,7 +4,7 @@
 
 > 题外话：我本来是想用Spring MVC写的——因为周围有的同学不相信Spring MVC也可以开发微服务，但是Spring MVC的各种配置和依赖问题把我整的想吐，为了少掉几根头发，还是用了方便好用的Spring Boot。
 
-**本项目的所有代码都上传到了GitHub，地址：**https://github.com/WenDev/spring-boot-istio-demo **如果有帮助的话不要吝啬你的Star和Fork呀，非常感谢～**
+**本项目的所有代码都上传到了GitHub，地址：** https://github.com/WenDev/spring-boot-istio-demo **如果有帮助的话不要吝啬你的Star和Fork呀，非常感谢～**
 
 ## 为什么要用Istio？
 
